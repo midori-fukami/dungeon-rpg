@@ -1,0 +1,52 @@
+[gd_scene load_steps=21 format=3 uid="uid://nck5foi8s1j0"]
+
+[ext_resource type="Texture2D" uid="uid://dm8imjany1i3h" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_000.png" id="1_2ah2k"]
+[ext_resource type="Texture2D" uid="uid://cfdt6dprlg7au" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_001.png" id="1_a1rar"]
+[ext_resource type="Texture2D" uid="uid://btl50f4rokuyo" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_002.png" id="3_tl4jg"]
+[ext_resource type="Texture2D" uid="uid://d0egq88s3yitd" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_003.png" id="4_3pb0g"]
+[ext_resource type="Texture2D" uid="uid://rabk2ir14blq" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_004.png" id="5_t7ax7"]
+[ext_resource type="Texture2D" uid="uid://c0b57vtjsohxi" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_005.png" id="6_mk4pw"]
+[ext_resource type="Texture2D" uid="uid://cwg2ilnanhsdq" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_006.png" id="7_yv2r6"]
+[ext_resource type="Texture2D" uid="uid://df8cnf6imbpie" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_007.png" id="8_uk0hx"]
+[ext_resource type="Texture2D" uid="uid://blse8eopkr00s" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_008.png" id="9_cm488"]
+[ext_resource type="Texture2D" uid="uid://d1e5jvpcx1g60" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_009.png" id="10_037ja"]
+[ext_resource type="Texture2D" uid="uid://d4ia7ymb42t2d" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_010.png" id="11_pdtv6"]
+[ext_resource type="Texture2D" uid="uid://c2womlephgwga" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_011.png" id="12_wy6fr"]
+[ext_resource type="Texture2D" uid="uid://bbu37l00mo6bq" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_012.png" id="13_v2fq5"]
+[ext_resource type="Texture2D" uid="uid://cxfyda7r2jtp5" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_013.png" id="14_wcanw"]
+[ext_resource type="Texture2D" uid="uid://cih58oosb5kvd" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_014.png" id="15_hne5j"]
+[ext_resource type="Texture2D" uid="uid://llbeqf5m3g6g" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_015.png" id="16_1crge"]
+[ext_resource type="Texture2D" uid="uid://qaka44b2gljg" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_016.png" id="17_08msj"]
+[ext_resource type="Texture2D" uid="uid://b0mt3d4k6bwtq" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_017.png" id="18_vuxus"]
+
+[sub_resource type="Animation" id="Animation_ndx80"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.0555556
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0555556, 0, 0.0555556, 0.111111, 0.166667, 0.222222, 0.277778, 0.333333, 0.388889, 0.444444, 0.5, 0.555556, 0.611111, 0.666667, 0.722222, 0.777778, 0.833333, 0.888889, 0.944444),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_2ah2k"), ExtResource("1_2ah2k"), ExtResource("1_a1rar"), ExtResource("3_tl4jg"), ExtResource("4_3pb0g"), ExtResource("5_t7ax7"), ExtResource("6_mk4pw"), ExtResource("7_yv2r6"), ExtResource("8_uk0hx"), ExtResource("9_cm488"), ExtResource("10_037ja"), ExtResource("11_pdtv6"), ExtResource("12_wy6fr"), ExtResource("13_v2fq5"), ExtResource("14_wcanw"), ExtResource("15_hne5j"), ExtResource("16_1crge"), ExtResource("17_08msj"), ExtResource("18_vuxus")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vlvnm"]
+_data = {
+"Idle": SubResource("Animation_ndx80")
+}
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_a1rar")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vlvnm")
+}
