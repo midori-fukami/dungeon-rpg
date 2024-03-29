@@ -6,14 +6,8 @@ public partial class Player : CharacterBody3D
     [ExportGroup("Required Nodes")]
     [Export] public AnimationPlayer animationPlayerNode { get; private set; }
     [Export] public Sprite3D spriteNode { get; private set; }
-    //[Export] public StateMachine stateMachine { get; private set; }
 
     private Vector2 direction = new();
-
-    public override void _Ready()
-    {
-        animationPlayerNode.Play(GameConstants.ANIM_IDLE);
-    }
 
     public override void _PhysicsProcess(double delta)
     {
@@ -21,7 +15,6 @@ public partial class Player : CharacterBody3D
         Velocity *= 5;
 
         MoveAndSlide();
-
         Flip();
     }
 
