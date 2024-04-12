@@ -76,14 +76,15 @@ _data = {
 "Move": SubResource("Animation_c2fnw")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animationPlayerNode", "spriteNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animationPlayerNode", "spriteNode", "stateMachineNode")]
 script = ExtResource("1_gg5jl")
 animationPlayerNode = NodePath("AnimationPlayer")
 spriteNode = NodePath("Sprite3D")
+stateMachineNode = NodePath("StateMachine")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture_filter = 0
-texture = ExtResource("26_mk4ok")
+texture = ExtResource("23_6kjpv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
