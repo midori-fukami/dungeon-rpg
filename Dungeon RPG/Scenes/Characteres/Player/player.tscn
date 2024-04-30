@@ -42,6 +42,23 @@
 [ext_resource type="Texture2D" uid="uid://b68ak6ysotp2n" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_004.png" id="37_3bd4w"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerDashState.cs" id="39_jythk"]
 
+[sub_resource type="Animation" id="Animation_nsdca"]
+resource_name = "Dash"
+length = 1.00002
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("33_8y3ou"), ExtResource("34_ppf27"), ExtResource("35_27wgl"), ExtResource("36_rwj82"), ExtResource("37_3bd4w"), ExtResource("2_jcg0i")]
+}
+
 [sub_resource type="Animation" id="Animation_ndx80"]
 resource_name = "Idle"
 loop_mode = 1
@@ -75,23 +92,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("20_3jq6s"), ExtResource("21_sbpk3"), ExtResource("22_cmsy1"), ExtResource("23_6kjpv"), ExtResource("24_xa2ua"), ExtResource("25_qbbm2"), ExtResource("26_mk4ok"), ExtResource("27_knke6"), ExtResource("28_iv8a8"), ExtResource("29_6gsoc"), ExtResource("30_3smx3"), ExtResource("31_l3nx5")]
-}
-
-[sub_resource type="Animation" id="Animation_nsdca"]
-resource_name = "Dash"
-length = 1.00002
-step = 0.166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("33_8y3ou"), ExtResource("34_ppf27"), ExtResource("35_27wgl"), ExtResource("36_rwj82"), ExtResource("37_3bd4w"), ExtResource("2_jcg0i")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vlvnm"]
