@@ -7,23 +7,23 @@ public partial class PlayerIdleState : PlayerState
     {
         if (characterNode.direction != Vector2.Zero)
         {
-            characterNode.stateMachineNode.SwitchState<PlayerMoveState>();
+            characterNode.StateMachineNode.SwitchState<PlayerMoveState>();
         }
     }
 
     public override void _Input(InputEvent @event)
     {
-        base._Input(@event);
+        //base._Input(@event);
 
-        // if (Input.IsActionJustPressed(GameConstants.INPUT_DASH)) {
-        //     characterNode.stateMachineNode.SwitchState<PlayerDashState>();
-        // }
+        if (Input.IsActionJustPressed(GameConstants.INPUT_DASH)) {
+            characterNode.StateMachineNode.SwitchState<PlayerDashState>();
+        }
     }
 
     protected override void EnterState()
     {
         base.EnterState();
 
-        characterNode.animationPlayerNode.Play(GameConstants.ANIM_IDLE);
+        characterNode.AnimationPlayerNode.Play(GameConstants.ANIM_IDLE);
     }
 }
