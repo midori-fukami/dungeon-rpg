@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://di7g0lr8sqwog"]
+[gd_scene load_steps=120 format=3 uid="uid://di7g0lr8sqwog"]
 
 [ext_resource type="Texture2D" uid="uid://bkhk5y8quh10a" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_012.png" id="1_7tft1"]
 [ext_resource type="Texture2D" uid="uid://d123gwyr1lrry" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_004.png" id="1_a2j4h"]
@@ -231,6 +231,8 @@ radius = 6.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_m2i4s"]
 radius = 1.4
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqbcf"]
+
 [node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayerNode", "SpriteNode", "StateMachineNode", "HurtboxNode", "AgentNode", "ChaseAreaNode", "AttackAreaNode")]
 collision_layer = 4
 collision_mask = 3
@@ -309,3 +311,8 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
 shape = SubResource("CapsuleShape3D_g45w3")
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_kqbcf")

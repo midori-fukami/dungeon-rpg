@@ -93,6 +93,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("39_enkq4"), ExtResource("40_j8fw5"), ExtResource("41_4bj3i"), ExtResource("42_ywpwq"), ExtResource("43_v2arq"), ExtResource("44_wgoif"), ExtResource("45_ttlxa"), ExtResource("46_of8to"), ExtResource("47_e4qc2"), ExtResource("48_ym2jm"), ExtResource("2_6tfqt"), ExtResource("49_iwg54")]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StateMachine/AttackState")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2499),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PerformHit"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_p4afm"]
 resource_name = "Attack2"
@@ -104,10 +118,24 @@ tracks/0/path = NodePath("Sprite3D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.245921, 0.333333, 0.415672, 0.5049, 0.583246, 0.670298, 0.75082, 0.835696, 0.920571),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.2499, 0.333333, 0.415672, 0.5049, 0.583246, 0.670298, 0.75082, 0.835696, 0.920571),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("51_cjv1t"), ExtResource("52_8parq"), ExtResource("53_urmc4"), ExtResource("54_php7t"), ExtResource("55_kay8i"), ExtResource("56_wmqf2"), ExtResource("57_tmw4r"), ExtResource("58_gcm6m"), ExtResource("59_gxqif"), ExtResource("60_8ukmb"), ExtResource("2_60hfy"), ExtResource("61_3beu0")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StateMachine/AttackState")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2499),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PerformHit"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_nsdca"]
@@ -176,7 +204,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_v640v"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayerNode", "SpriteNode", "StateMachineNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayerNode", "SpriteNode", "StateMachineNode", "HitboxNode", "HitboxShapeNode")]
 collision_layer = 2
 collision_mask = 5
 floor_max_angle = 1.55334
@@ -186,11 +214,13 @@ stats = Array[Object]([SubResource("Resource_ohnfw"), SubResource("Resource_2rjt
 AnimationPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
 StateMachineNode = NodePath("StateMachine")
+HitboxNode = NodePath("Hitbox")
+HitboxShapeNode = NodePath("Hitbox/CollisionShape3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.0025
 texture_filter = 0
-texture = ExtResource("61_3beu0")
+texture = ExtResource("54_php7t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -229,9 +259,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28747, 0)
 shape = SubResource("CapsuleShape3D_hnipf")
 
 [node name="Hitbox" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.785709, 0, 0)
 collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("BoxShape3D_v640v")
+disabled = true
