@@ -52,7 +52,7 @@ point_count = 8
 script = ExtResource("1_lmlr8")
 
 [node name="Player" parent="." instance=ExtResource("2_bg5tu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09168, 2, -4.0001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09168, 2, -10.8451)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 6)

@@ -21,15 +21,12 @@ public partial class PlayerMoveState : PlayerState
 
     protected override void EnterState()
     {
-        base.EnterState();
-
         characterNode.AnimationPlayerNode.Play(GameConstants.ANIM_MOVE);
     }
 
-
     public override void _Input(InputEvent @event)
     {
-        base._Input(@event);
+        CheckForAttackInput();
 
         if (Input.IsActionJustPressed(GameConstants.INPUT_DASH)) {
             characterNode.StateMachineNode.SwitchState<PlayerDashState>();
