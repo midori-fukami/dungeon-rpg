@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5yqbo58dajqf"]
+[gd_scene load_steps=18 format=3 uid="uid://b5yqbo58dajqf"]
 
 [ext_resource type="Texture2D" uid="uid://dwg6ixxk85m2i" path="res://Assets/Sprites/UI/UI Element 1.png" id="1_dym3d"]
 [ext_resource type="Script" path="res://Scripts/UI/UIController.cs" id="1_ubqe8"]
@@ -10,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://byto2u8n3mnb8" path="res://Assets/Sprites/UI/UI ElementUI 7.png" id="8_ekkqg"]
 [ext_resource type="Texture2D" uid="uid://cb3vdu810rft5" path="res://Assets/Sprites/UI/UI ElementUI 8.png" id="9_af8fl"]
 [ext_resource type="Script" path="res://Scripts/UI/StatLabel.cs" id="9_x6iyk"]
+[ext_resource type="Resource" uid="uid://diatwpkohin00" path="res://Resources/player_health_stat.tres" id="10_87mly"]
 [ext_resource type="Texture2D" uid="uid://cy18xhef21r5u" path="res://Assets/Sprites/UI/UI ElementUI 9.png" id="10_qx2ae"]
+[ext_resource type="Resource" uid="uid://6lwg7yqjwch7" path="res://Resources/player_strength_stat.tres" id="12_dxhjy"]
+[ext_resource type="Script" path="res://Scripts/UI/EnemyCountLabel.cs" id="14_86if8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsuot"]
 texture = ExtResource("3_oawxn")
@@ -112,6 +115,7 @@ theme_override_fonts/font = ExtResource("2_up0c6")
 theme_override_font_sizes/font_size = 28
 text = "---"
 script = ExtResource("9_x6iyk")
+statResource = ExtResource("10_87mly")
 
 [node name="Strength" type="Panel" parent="Stats/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 44)
@@ -136,6 +140,8 @@ theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_up0c6")
 theme_override_font_sizes/font_size = 28
 text = "---"
+script = ExtResource("9_x6iyk")
+statResource = ExtResource("12_dxhjy")
 
 [node name="EnemyCount" type="Panel" parent="Stats/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 44)
@@ -160,3 +166,4 @@ theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_up0c6")
 theme_override_font_sizes/font_size = 28
 text = "---"
+script = ExtResource("14_86if8")

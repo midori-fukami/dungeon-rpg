@@ -8,6 +8,8 @@ public partial class StatLabel : Label
     public override void _Ready()
     {
         statResource.OnUpdate += HandleUpdate;
+
+        Text = statResource.StatValue.ToString();
     }
 
     private void HandleUpdate()
