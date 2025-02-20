@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b5yqbo58dajqf"]
+[gd_scene load_steps=26 format=3 uid="uid://b5yqbo58dajqf"]
 
 [ext_resource type="Texture2D" uid="uid://dwg6ixxk85m2i" path="res://Assets/Sprites/UI/UI Element 1.png" id="1_dym3d"]
 [ext_resource type="Script" path="res://Scripts/UI/UIController.cs" id="1_ubqe8"]
@@ -16,6 +16,10 @@
 [ext_resource type="Script" path="res://Scripts/UI/EnemyCountLabel.cs" id="14_86if8"]
 [ext_resource type="Texture2D" uid="uid://ds8shl57cvydy" path="res://Assets/Sprites/UI/UI Element 3.png" id="15_2if7i"]
 [ext_resource type="Texture2D" uid="uid://bultw3m06ffqa" path="res://Assets/Sprites/UI/UI ElementUI 10.png" id="16_iht4y"]
+[ext_resource type="Texture2D" uid="uid://674d0ysytrw8" path="res://Assets/Sprites/UI/UI ElementUI 11.png" id="17_533cu"]
+[ext_resource type="Texture2D" uid="uid://bplvmo7ojfb8h" path="res://Assets/Sprites/UI/UI Element 5.png" id="18_aem0g"]
+[ext_resource type="Texture2D" uid="uid://b063dhck00up2" path="res://Assets/Sprites/UI/UI Element 4.png" id="19_msme4"]
+[ext_resource type="Texture2D" uid="uid://cc37guaifc8ew" path="res://Assets/Sprites/UI/UI ElementUI 13.png" id="20_c46sp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsuot"]
 texture = ExtResource("3_oawxn")
@@ -32,6 +36,13 @@ texture = ExtResource("7_amqsa")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31d48"]
 texture = ExtResource("15_2if7i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yb7oy"]
+texture = ExtResource("19_msme4")
+expand_margin_left = 72.0
+expand_margin_top = 16.0
+expand_margin_right = 72.0
+expand_margin_bottom = 22.0
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -214,3 +225,160 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("16_iht4y")
+
+[node name="Victory" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_31d48")
+script = ExtResource("1_yicbo")
+container = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Victory"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Victory/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="Victory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_up0c6")
+theme_override_font_sizes/font_size = 48
+text = "VICTORY"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Victory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("17_533cu")
+
+[node name="Pause" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_31d48")
+script = ExtResource("1_yicbo")
+container = 1
+ButtonNode = NodePath("MarginContainer/VBoxContainer/Button")
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_up0c6")
+theme_override_font_sizes/font_size = 48
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("18_aem0g")
+
+[node name="Button" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_up0c6")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_yb7oy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yb7oy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yb7oy")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yb7oy")
+text = "CONTINUE"
+
+[node name="Reward" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_31d48")
+script = ExtResource("1_yicbo")
+container = 5
+ButtonNode = NodePath("../Pause/MarginContainer/VBoxContainer/Button")
+
+[node name="MarginContainer" type="MarginContainer" parent="Reward"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Reward/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Reward/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_up0c6")
+theme_override_font_sizes/font_size = 48
+text = "REWARD"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Reward/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="TextureRect" type="TextureRect" parent="Reward/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("20_c46sp")
+
+[node name="RewardText" type="Label" parent="Reward/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_up0c6")
+theme_override_font_sizes/font_size = 22
+text = "REWARD"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Reward/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_up0c6")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_yb7oy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yb7oy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yb7oy")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yb7oy")
+text = "CONTINUE"

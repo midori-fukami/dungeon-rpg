@@ -95,7 +95,7 @@ tracks/0/path = NodePath("Sprite3D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.256802, 0.333333, 0.415672, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.2499, 0.3332, 0.415672, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("39_enkq4"), ExtResource("40_j8fw5"), ExtResource("41_4bj3i"), ExtResource("42_ywpwq"), ExtResource("43_v2arq"), ExtResource("44_wgoif"), ExtResource("45_ttlxa"), ExtResource("46_of8to"), ExtResource("47_e4qc2"), ExtResource("48_ym2jm"), ExtResource("2_6tfqt"), ExtResource("49_iwg54")]
