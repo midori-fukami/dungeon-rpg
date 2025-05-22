@@ -122,10 +122,11 @@ StatType = 1
 StatValue = 4.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xebk"]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("3_w3s63")
 shader_parameter/active = false
 shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/tex = ExtResource("20_w7yxl")
 
 [sub_resource type="Animation" id="Animation_ch17s"]
 resource_name = "Attack"
